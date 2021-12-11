@@ -2,7 +2,7 @@
 
 [<EntryPoint>]
 let main args =
-    let slidingWindowSumIncreaseCount =
+    let countOfIncreasingSlidingWindowSums =
         File.ReadLines args.[1]
         |> Seq.map (fun line -> line |> int) // parse input lines to ints
         |> Seq.windowed 3 // divide up ints into sliding windows of size 3
@@ -11,6 +11,6 @@ let main args =
         |> Seq.filter (fun (a, b) -> b > a) // keep only increasing pairs of sums 
         |> Seq.length
     
-    printfn "%d" slidingWindowSumIncreaseCount
+    printfn "%d" countOfIncreasingSlidingWindowSums
 
     0
